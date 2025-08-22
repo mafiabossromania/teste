@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gloria Bijoux — Boutique</title>
+    <meta name="description" content="Bijoux acier inoxydable 316L — résistants à l'eau, hypoallergéniques et garantis. Bracelets, bagues, colliers et boucles d'oreilles."/>
+    <style>
+      /* Palette */
+      :root{
+        --color-50: #FFFEFA;
+        --color-100: #F1E6C6;
+        --color-200: #E8D6A1;
+        --color-300: #E0C984;
+        --color-400: #D5B658;
+        --color-500: #CCA633;
+        --color-600: #A7882A;
+        --color-700: #836A21;
+        --color-800: #5E4C17;
+        --color-900: #392E0E;
+        --color-950: #141105;
+
+        --bg: var(--color-50);
+        --text: var(--color-950);
+        --muted: var(--color-700);
+        --card: #ffffff;
+        --line: var(--color-200);
+        --acc: var(--color-500);
+      }
+
+      html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.6}
+      *{box-sizing:border-box}
+      img{max-width:100%;display:block}
+      a{text-decoration:none;color:inherit}
+      .container{max-width:1180px;margin:0 auto;padding:0 16px}
+
+      /* Animation apparition */
+      .reveal{opacity:0;transform:translateY(30px);transition:all .6s ease}
+      .visible{opacity:1;transform:translateY(0)}
+
+      /* Boutons */
+      .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;border:1px solid var(--line);background:var(--color-100);cursor:pointer;font-weight:500;color:var(--text)}
+      .btn.primary{background:var(--acc);color:var(--color-50)}
+
+      /* Header */
+      header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:50}
+      nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+      .brand{font-weight:700;font-size:20px;color:var(--color-900)}
+      .navlinks{display:flex;gap:10px;flex:1;justify-content:center}
+      .pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--color-100)}
+
+      /* Hero */
+      .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding:40px 0}
+      .hero .text h1{font-size:clamp(28px,3vw,46px);margin:0 0 10px;color:var(--color-900)}
+
+      /* Cards */
+      .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+      .grid{display:grid;gap:20px}
+      .products{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+
+      .bar{background:var(--color-900);color:var(--color-50);border-bottom:1px solid var(--line);text-align:center;padding:8px 12px;font-size:14px}
+      .bar strong{color:var(--acc)}
+      .hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+      .btn:hover{transform:translateY(-1px)}
+
+      @media (max-width:900px){
+        .hero{grid-template-columns:1fr}
+        .navlinks{display:none}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar">LIVRAISON OFFERTE DÈS <strong>25€</strong> • Domicile & Mondial Relay</div>
+
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">Gloria Bijoux</div>
+          <div class="navlinks">
+            <a class="pill" href="#">Accueil</a>
+            <a class="pill" href="#best">Nouveautés</a>
+            <a class="pill" href="#cats">Catégories</a>
+            <a class="pill" href="#faq">FAQ</a>
+            <a class="pill" href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero reveal">
+        <div class="text">
+          <h1>Bijoux dorés qui résistent à la vie quotidienne.</h1>
+          <p style="color:var(--muted)">Bracelets élégants, acier inoxydable, finitions soignées.</p>
+          <div class="hero-buttons">
+            <a href="#shop" class="btn primary">Découvrir</a>
+            <a href="#cats" class="btn">Catégories</a>
+          </div>
+        </div>
+        <div class="visual card" style="aspect-ratio:4/5;display:grid;place-items:center">Image produit</div>
+      </section>
+
+      <section id="cats" class="reveal">
+        <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+          <a class="card" href="#shop" style="padding:20px;text-align:center">Bracelets</a>
+          <a class="card" href="#shop" style="padding:20px;text-align:center">Bagues</a>
+          <a class="card" href="#shop" style="padding:20px;text-align:center">Colliers</a>
+          <a class="card" href="#shop" style="padding:20px;text-align:center">Boucles d'oreilles</a>
+          <a class="card" href="#shop" style="padding:20px;text-align:center">Combos</a>
+        </div>
+      </section>
+
+      <section id="shop" class="reveal">
+        <h2 id="best">Nos best‑sellers</h2>
+        <div class="grid products">
+          <article class="card" style="padding:20px">
+            <h3>Bracelet « Fleur »</h3>
+            <p class="price">9,99 €</p>
+            <a href="#" class="btn primary">Acheter</a>
+          </article>
+          <article class="card" style="padding:20px">
+            <h3>Bracelet « H »</h3>
+            <p class="price">19,99 €</p>
+            <a href="#" class="btn primary">Acheter</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="reveal" style="margin-top:40px;padding:20px;background:var(--color-100)">
+      <div class="container">
+        <p>© 2025 Gloria Bijoux — France • EUR €</p>
+      </div>
+    </footer>
+
+    <script>
+      const reveals=document.querySelectorAll('.reveal');
+      function revealOnScroll(){
+        for(const el of reveals){
+          const rect=el.getBoundingClientRect();
+          if(rect.top<window.innerHeight-50){el.classList.add('visible');}
+        }
+      }
+      window.addEventListener('scroll',revealOnScroll);
+      revealOnScroll();
+    </script>
+  </body>
+</html>
